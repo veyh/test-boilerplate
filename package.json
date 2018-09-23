@@ -1,0 +1,23 @@
+{
+  "name": "@veyh/test-boilerplate",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "private": true,
+  "author": "veyh",
+  "license": "ISC",
+  "dependencies": {
+    "@veyh/eslint-config": "^1.0.0",
+    "bottlejs": "^1.5.0",
+    "chai": "^3.5.0",
+    "chai-as-promised": "^5.2.0",
+    "chai-subset": "^1.5.0",
+    "deep-freeze": "0.0.1",
+    "sinon": "github:veyh/sinon",
+    "sinon-chai": "^2.14.0"
+  },
+  "devDependencies": {
+    "eslint": "^5.6.0",
+    "eslint-plugin-react": "^7.11.1"
+  }
+}
