@@ -1091,9 +1091,11 @@ packages:
       integrity: sha512-S7rnFITmBH1EnyKcvxBh1LjYeQMmnZtCXSEbHcH6S0NoKit24ZuFO/T1vDcLdYsLQkM188PVVhQmzKIuThNkKg==
       tarball: 'http://registry.npmjs.org/table/-/table-4.0.3.tgz'
   /text-encoding/0.6.4:
+    deprecated: no longer maintained
     dev: false
     resolution:
       integrity: sha1-45mpgiV6J22uQou5KEXLcb3CbRk=
+      tarball: 'http://registry.npmjs.org/text-encoding/-/text-encoding-0.6.4.tgz'
   /text-table/0.2.0:
     dev: true
     resolution:
@@ -1193,5 +1195,5 @@ specifiers:
   deep-freeze: 0.0.1
   eslint: ^5.6.0
   eslint-plugin-react: ^7.11.1
-  sinon: 'github:veyh/sinon'
+  sinon: 'github:veyh/sinon#f26aaf071f2c37665226abda1f90a3a3d607204f'
   sinon-chai: ^2.14.0
