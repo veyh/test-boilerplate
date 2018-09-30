@@ -1195,5 +1195,5 @@ specifiers:
   deep-freeze: 0.0.1
   eslint: ^5.6.0
   eslint-plugin-react: ^7.11.1
-  sinon: 'github:veyh/sinon#f26aaf071f2c37665226abda1f90a3a3d607204f'
+  sinon: 'github:veyh/sinon'
   sinon-chai: ^2.14.0
