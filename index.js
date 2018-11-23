@@ -7,7 +7,9 @@ const sinon = require("sinon");
 chai.use(require("sinon-chai"));
 const Bottle = require("bottlejs");
 const enzyme = require("enzyme");
+enzyme.configure({ adapter: new (require("enzyme-adapter-react-16")) });
 const { shallow } = enzyme;
+chai.use(require("chai-enzyme"));
 
 const statics = {
   chai, expect, sinon, deepFreeze, Bottle,

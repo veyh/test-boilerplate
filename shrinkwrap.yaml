@@ -3,9 +3,11 @@ dependencies:
   bottlejs: 1.7.1
   chai: 3.5.0
   chai-as-promised: 5.3.0
+  chai-enzyme: 1.0.0-beta.1
   chai-subset: 1.6.0
   deep-freeze: 0.0.1
   enzyme: 3.7.0
+  enzyme-adapter-react-16: 1.7.0
   sinon: github.com/veyh/sinon/f26aaf071f2c37665226abda1f90a3a3d607204f
   sinon-chai: 2.14.0
 devDependencies:
@@ -254,6 +256,10 @@ packages:
     dev: true
     resolution:
       integrity: sha512-iCuPHDFgrHX7H2vEI/5xpz07zSHB00TpugqhmYtVmMO6518mCuRMoOYFldEBl0g187ufozdaHgWKcYFb61qGiA==
+  /buffer-from/1.1.1:
+    dev: false
+    resolution:
+      integrity: sha512-MQcXEUbCKtEo7bhqEs6560Hyd4XaovZlO/k9V3hjVUF/zwW7KBVdSK4gIt/bzwS9MbR5qob+F5jusZsb0YQK2A==
   /caller-path/0.1.0:
     dependencies:
       callsites: 0.2.0
@@ -274,6 +280,18 @@ packages:
       chai: '>= 2.1.2 < 4'
     resolution:
       integrity: sha1-CdekApCKpw39vq1T5YU/x50+8hw=
+  /chai-enzyme/1.0.0-beta.1:
+    dependencies:
+      html: 1.0.0
+    dev: false
+    peerDependencies:
+      chai: ^3.0.0 || ^4.0.0
+      cheerio: 0.19.x || 0.20.x || 0.22.x || ^1.0.0-0
+      enzyme: ^2.7.0 || ^3.0.0
+      react: ^0.14.0 || ^15.0.0-0 || ^16.0.0-0
+      react-dom: ^0.14.0 || ^15.0.0-0 || ^16.0.0-0
+    resolution:
+      integrity: sha512-vWT101M7qjq6kM/29G4vHrgLM4Mj1gCnKuvOSF03s8pFVsqol4B6USoGM/aYRKqaaIHs8/AxmHjWGFplQWhIQw==
   /chai-subset/1.6.0:
     dev: false
     engines:
@@ -353,6 +371,21 @@ packages:
     dev: true
     resolution:
       integrity: sha1-2Klr13/Wjfd5OnMDajug1UBdR3s=
+  /concat-stream/1.6.2:
+    dependencies:
+      buffer-from: 1.1.1
+      inherits: 2.0.3
+      readable-stream: 2.3.6
+      typedarray: 0.0.6
+    dev: false
+    engines:
+      '0': node >= 0.8
+    resolution:
+      integrity: sha512-27HBghJxjiZtIk3Ycvn/4kbJk/1uZuJFfuPEns6LaEvpvG1f0hTea8lilrouyo9mVc2GWdcEZ8OLoGmSADlrCw==
+  /core-util-is/1.0.2:
+    dev: false
+    resolution:
+      integrity: sha1-tf1UIgqivFq1eqtxQMlAdUUDwac=
   /cross-spawn/6.0.5:
     dependencies:
       nice-try: 1.0.5
@@ -486,6 +519,33 @@ packages:
     dev: false
     resolution:
       integrity: sha512-f2LZMYl1Fzu7YSBKg+RoROelpOaNrcGmE9AZubeDfrCEia483oW4MI4VyFd5VNHIgQ/7qm1I0wUHK1eJnn2y2w==
+  /enzyme-adapter-react-16/1.7.0:
+    dependencies:
+      enzyme-adapter-utils: 1.9.0
+      function.prototype.name: 1.1.0
+      object.assign: 4.1.0
+      object.values: 1.0.4
+      prop-types: 15.6.2
+      react-is: 16.6.3
+      react-test-renderer: 16.6.3
+    dev: false
+    peerDependencies:
+      enzyme: ^3.0.0
+      react: ^16.0.0-0
+      react-dom: ^16.0.0-0
+    resolution:
+      integrity: sha512-rDr0xlnnFPffAPYrvG97QYJaRl9unVDslKee33wTStsBEwZTkESX1H7VHGT5eUc6ifNzPgOJGvSh2zpHT4gXjA==
+  /enzyme-adapter-utils/1.9.0:
+    dependencies:
+      function.prototype.name: 1.1.0
+      object.assign: 4.1.0
+      prop-types: 15.6.2
+      semver: 5.6.0
+    dev: false
+    peerDependencies:
+      react: 0.13.x || 0.14.x || ^15.0.0-0 || ^16.0.0-0
+    resolution:
+      integrity: sha512-uMe4xw4l/Iloh2Fz+EO23XUYMEQXj5k/5ioLUXCNOUCI8Dml5XQMO9+QwUq962hBsY5qftfHHns+d990byWHvg==
   /enzyme/3.7.0:
     dependencies:
       array.prototype.flat: 1.2.1
@@ -831,6 +891,13 @@ packages:
       node: '>= 0.4.0'
     resolution:
       integrity: sha512-f2dvO0VU6Oej7RkWJGrehjbzMAjFp5/VKPp5tTpWIV4JHHZK1/BxbFRtf/siA2SWTe09caDmVtYYzWEIbBS4zw==
+  /html/1.0.0:
+    dependencies:
+      concat-stream: 1.6.2
+    dev: false
+    hasBin: true
+    resolution:
+      integrity: sha1-pUT6nqVJK/s6LMqCEKEL57WvH2E=
   /htmlparser2/3.10.0:
     dependencies:
       domelementtype: 1.3.0
@@ -978,12 +1045,15 @@ packages:
     dev: false
     resolution:
       integrity: sha1-ihis/Kmo9Bd+Cav8YDiTmwXR7t8=
+  /isarray/1.0.0:
+    dev: false
+    resolution:
+      integrity: sha1-u5NdSFgsuhaMBoNJV6VKPgcSTxE=
   /isexe/2.0.0:
     dev: true
     resolution:
       integrity: sha1-6PvzdNxVb/iUehDcsFctYz8s+hA=
   /js-tokens/4.0.0:
-    dev: true
     resolution:
       integrity: sha512-RdJUflcE3cUzKiMqQgsCu06FPu9UdIJO0beYbPhHN4k6apgJtifcoCtT9bcxOpYBtpD2kCM6Sbzg4CausW/PKQ==
   /js-yaml/3.12.0:
@@ -1056,7 +1126,6 @@ packages:
   /loose-envify/1.4.0:
     dependencies:
       js-tokens: 4.0.0
-    dev: true
     hasBin: true
     resolution:
       integrity: sha512-lyuxPGr/Wfhrlem2CL/UcnUc1zcqKAImBDzukY7Y5F/yQiNdko6+fRLevlw1HgMySw7f611UIY408EtxRSoK3Q==
@@ -1141,7 +1210,6 @@ packages:
     resolution:
       integrity: sha512-WeBOdju8SnzPN5vTUJYxYUxLeXpCaVP5i5e0LF8fg7WORF2Wd7wFX/pk0tYZk7s8T+J7VLy0Da6J1+wCT0AtHg==
   /object-assign/4.1.1:
-    dev: true
     engines:
       node: '>=0.10.0'
     resolution:
@@ -1291,6 +1359,10 @@ packages:
       node: '>= 0.8.0'
     resolution:
       integrity: sha1-IZMqVJ9eUv/ZqCf1cOBL5iqX2lQ=
+  /process-nextick-args/2.0.0:
+    dev: false
+    resolution:
+      integrity: sha512-MtEC1TqN0EU5nephaJ4rAtThHtC86dNN9qCuEhtshvpVBkAW5ZO7BASN9REnF9eoXGcRub+pFuKEpOHE+HbEMw==
   /progress/2.0.0:
     dev: true
     engines:
@@ -1301,7 +1373,6 @@ packages:
     dependencies:
       loose-envify: 1.4.0
       object-assign: 4.1.1
-    dev: true
     resolution:
       integrity: sha512-3pboPvLiWD7dkI3qf3KbUe6hKFKa52w+AE0VCqECtf+QHAKgOL37tTaNCnuX1nAAQ4ZhyP+kYVKf8rLmJ/feDQ==
   /punycode/2.1.1:
@@ -1329,6 +1400,33 @@ packages:
       node: '>=0.12'
     resolution:
       integrity: sha512-80WNmd9DA0tmZrw9qQa62GPPWfuXJknrmVmLcxvq4uZBdYqb1wYoKTmnlGUchvVWe0XiLupYkBoXVOxz3C8DYQ==
+  /react-is/16.6.3:
+    dev: false
+    resolution:
+      integrity: sha512-u7FDWtthB4rWibG/+mFbVd5FvdI20yde86qKGx4lVUTWmPlSWQ4QxbBIrrs+HnXGbxOUlUzTAP/VDmvCwaP2yA==
+  /react-test-renderer/16.6.3:
+    dependencies:
+      object-assign: 4.1.1
+      prop-types: 15.6.2
+      react-is: 16.6.3
+      scheduler: 0.11.2
+    dev: false
+    peerDependencies:
+      react: ^16.6.3
+    resolution:
+      integrity: sha512-B5bCer+qymrQz/wN03lT0LppbZUDRq6AMfzMKrovzkGzfO81a9T+PWQW6MzkWknbwODQH/qpJno/yFQLX5IWrQ==
+  /readable-stream/2.3.6:
+    dependencies:
+      core-util-is: 1.0.2
+      inherits: 2.0.3
+      isarray: 1.0.0
+      process-nextick-args: 2.0.0
+      safe-buffer: 5.1.2
+      string_decoder: 1.1.1
+      util-deprecate: 1.0.2
+    dev: false
+    resolution:
+      integrity: sha512-tQtKA9WIAhBF3+VLAseyMqZeBjW0AHJoxOtYqSUZNJxauErmLbVm2FW1y+J/YA9dUrAC39ITejlZWhVIwawkKw==
   /readable-stream/3.0.6:
     dependencies:
       inherits: 2.0.3
@@ -1417,6 +1515,13 @@ packages:
     dev: false
     resolution:
       integrity: sha512-1HwIYD/8UlOtFS3QO3w7ey+SdSDFE4HRNLZoZRYVQefrOY3l17epswImeB1ijgJFQJodIaHcwkp3r/myBjFVbg==
+  /scheduler/0.11.2:
+    dependencies:
+      loose-envify: 1.4.0
+      object-assign: 4.1.1
+    dev: false
+    resolution:
+      integrity: sha512-+WCP3s3wOaW4S7C1tl3TEXp4l9lJn0ZK8G3W3WKRWmw77Z2cIFUW2MiNTMHn5sCjxN+t7N43HAOOgMjyAg5hlg==
   /semver/5.5.1:
     dev: true
     hasBin: true
@@ -1600,6 +1705,10 @@ packages:
       node: '>=4'
     resolution:
       integrity: sha512-0fr/mIH1dlO+x7TlcMy+bIDqKPsw/70tVyeHW787goQjhmqaZe10uwLujubK9q9Lg6Fiho1KUKDYz0Z7k7g5/g==
+  /typedarray/0.0.6:
+    dev: false
+    resolution:
+      integrity: sha1-hnrHTjhkGHsdPUfZlqeOxciDB3c=
   /underscore/1.4.4:
     dev: false
     resolution:
@@ -1661,9 +1770,11 @@ specifiers:
   bottlejs: ^1.5.0
   chai: ^3.5.0
   chai-as-promised: ^5.2.0
+  chai-enzyme: ^1.0.0-beta.1
   chai-subset: ^1.5.0
   deep-freeze: 0.0.1
   enzyme: ^3.7.0
+  enzyme-adapter-react-16: ^1.7.0
   eslint: ^5.6.0
   eslint-plugin-flowtype: ^3.2.0
   eslint-plugin-react: ^7.11.1
