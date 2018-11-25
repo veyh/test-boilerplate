@@ -10,10 +10,12 @@ const enzyme = require("enzyme");
 enzyme.configure({ adapter: new (require("enzyme-adapter-react-16")) });
 const { shallow } = enzyme;
 chai.use(require("chai-enzyme"));
+const proxyquire = require("proxyquire");
 
 const statics = {
   chai, expect, sinon, deepFreeze, Bottle,
   enzyme, shallowUntilTarget,
+  proxyquire,
 }
 
 function setup() {
