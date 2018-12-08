@@ -16,6 +16,7 @@
     "deep-freeze": "0.0.1",
     "enzyme": "^3.7.0",
     "enzyme-adapter-react-16": "^1.7.0",
+    "lolex": "^3.0.0",
     "proxyquire": "^2.1.0",
     "sinon": "github:veyh/sinon",
     "sinon-chai": "^2.14.0"
